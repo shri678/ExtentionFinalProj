@@ -8,6 +8,8 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+server = app.server
+
 app.layout = html.Div([
     dcc.Tabs(id='tabs-example', value='tab-1', children=[
         dcc.Tab(label='IPL', value='tab-1'),
@@ -49,7 +51,7 @@ def render_content(tab):
             ],style={'display': 'inline-block', 'width': '80%'}),
             
         ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
-        
+
     elif tab == 'tab-2':
         return html.Div([
             html.H3('Tab content 2')
